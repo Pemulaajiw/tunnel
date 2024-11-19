@@ -211,13 +211,13 @@ echo -e " ${COLOR1}           └───────────────�
 echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e " ${COLOR1}│$NC  $COLBG1 System OS ${NC}        $Blue:$NC  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
 echo -e " ${COLOR1}│$NC  $COLBG1 Server Ram ${NC}       $Blue:$NC  $uram MB/ $tram MB${NC}"
-echo -e " ${COLOR1}│$NC  $COLBG1 System Core ${NC}        $Blue:$NC  $CORE Core${NC}"
+echo -e " ${COLOR1}│$NC  $COLBG1 System Core ${NC}      $Blue:$NC  $CORE Core${NC}"
 echo -e " ${COLOR1}│$NC  $COLBG1 ISP ${NC}              $Blue:$NC  $ISP${NC}"
 echo -e " ${COLOR1}│$NC  $COLBG1 CITY ${NC}             $Blue:$NC  $CITY${NC}"
 echo -e " ${COLOR1}│$NC  $COLBG1 Domain ${NC}           $Blue:$NC  $domain${NC}"
 echo -e " ${COLOR1}│$NC  $COLBG1 IP-VPS ${NC}           $Blue:$NC  $IPVPS${NC}"
 echo -e " ${COLOR1}│$NC  $COLBG1 Date & Time ${NC}      $Blue:$NC  $DATEVPS | $TIMEZONE${NC}"
-echo -e " ${COLOR1}│$NC  $COLBG1 System Uptime ${NC}    ${Blue}: $NC (uptime -p | cut -d " " -f 2-10) ${NC}"
+echo -e " ${COLOR1}│$NC  $COLBG1 System Uptime ${NC}    $Blue: $NC (uptime -p | cut -d " " -f 2-10) ${NC}"
 echo -e " ${COLOR1}└─────────────────────────────────────────────────────┘${NC}"
 DATE=$(date +'%d %B %Y')
 datediff() {
@@ -250,10 +250,10 @@ echo -e "${COLOR1}   ${COLBG1}SSH         VMESS           VLESS          TROJAN 
 echo -e "${COLOR1}    ${green} $ssh1           $vma               $vla              $trb $NC"
 echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${COLOR1}┌─────────────────────────────────────────────────────┐"
-echo -e "    $COLOR1 1.$NC $COLBG1 MENU SSH$NC                $COLOR1 6.$NC $COLBG1 SETTINGS$NC" 
+echo -e "    $COLOR1 1.$NC $COLBG1 MENU SSH$NC               $COLOR1 6.$NC $COLBG1 SETTINGS$NC" 
 echo -e "    $COLOR1 2.$NC $COLBG1 MENU XRAY$NC              $COLOR1 7.$NC $COLBG1 BOT TELE$NC"    
-echo -e "    $COLOR1 3.$NC $COLBG1 MENU TROJAN$NC              $COLOR1 8.$NC $BIBlue UPDATE SC$NC"    
-echo -e "    $COLOR1 4.$NC $COLBG1 MENU SS-SOCK$NC             $COLOR1 9.$NC $COLBG1 CEK UDP$NC" 
+echo -e "    $COLOR1 3.$NC $COLBG1 MENU TROJAN$NC            $COLOR1 8.$NC $BIBlue UPDATE SC$NC"    
+echo -e "    $COLOR1 4.$NC $COLBG1 MENU SS-SOCK$NC           $COLOR1 9.$NC $COLBG1 CEK UDP$NC" 
 echo -e "    $COLOR1 5.$NC $COLBG1 MENU THEME$NC             $COLOR1 x.$NC $COLBG1 EXIT SCRIPT$NC"     
 echo -e " ${COLOR1}└─────────────────────────────────────────────────────┘"
 echo -e "                   Version : 1.4.2 ${NC}" | lolcat
@@ -298,12 +298,9 @@ wget https://raw.githubusercontent.com/Pemulaajiw/tunnel/main/update.sh && chmod
 clear
 cekudp
 ;;
-0 | 00)
+x)
 figlet WARUNG VPN FANTUNNEL
 exit
-;;
-x)
-menu
 ;;
 *)
 echo -e ""
