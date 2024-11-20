@@ -221,16 +221,16 @@ echo -e " ${COLOR1}           ┌───────────────�
 echo -e " ${COLOR1}           │      ${NC}${BIBlue}.::.${BIYellow}FANVPN${BIBlue}.::.$NC    " ${BIBlue}
 echo -e " ${COLOR1}           └───────────────────────────────┘$NC"
 echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e " ${COLOR1}│$COLBG1 System OS         :$WH  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
-echo -e " ${COLOR1}│$COLBG1 Server Ram        :$WH  $uram MB/ $tram MB${NC}"
-echo -e " ${COLOR1}│$COLBG1 System Core       :$WH  $CORE Core${NC}"
-echo -e " ${COLOR1}│$COLBG1 ISP               :$WH  $ISP${NC}"
-echo -e " ${COLOR1}│$COLBG1 CITY              :$WH  $CITY${NC}"
-echo -e " ${COLOR1}│$COLBG1 Domain            :$WH  $domain${NC}"
-echo -e " ${COLOR1}│$COLBG1 IP-VPS            :$WH  $IPVPS${NC}"
-echo -e " ${COLOR1}│$COLBG1 Date & Time       :$WH  $DATEVPS | $TIMEZONE${NC}"
-echo -e " ${COLOR1}│$COLBG1 System Uptime     :$WH $SERONLINE${NC}"
-echo -e " ${COLOR1}│$COLBG1 Your Ping     :$WH $ping${NC}"
+echo -e " ${COLOR1}│$COLBG1 System OS      :$WH  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
+echo -e " ${COLOR1}│$COLBG1 Server Ram     :$WH  $uram MB/ $tram MB${NC}"
+echo -e " ${COLOR1}│$COLBG1 System Core    :$WH  $CORE Core${NC}"
+echo -e " ${COLOR1}│$COLBG1 ISP            :$WH  $ISP${NC}"
+echo -e " ${COLOR1}│$COLBG1 CITY           :$WH  $CITY${NC}"
+echo -e " ${COLOR1}│$COLBG1 Domain         :$WH  $domain${NC}"
+echo -e " ${COLOR1}│$COLBG1 IP-VPS         :$WH  $IPVPS${NC}"
+echo -e " ${COLOR1}│$COLBG1 Date & Time    :$WH  $DATEVPS | $TIMEZONE${NC}"
+echo -e " ${COLOR1}│$COLBG1 System Uptime  :$WH $SERONLINE${NC}"
+echo -e " ${COLOR1}│$COLBG1 Your Ping      :$WH $ping${NC}"
 echo -e " ${COLOR1}└─────────────────────────────────────────────────────┘${NC}"
 DATE=$(date +'%d %B %Y')
 datediff() {
