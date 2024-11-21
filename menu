@@ -265,10 +265,10 @@ echo -e "${COLOR1} │   ${COLBG1}SSH         VMESS           VLESS          TRO
 echo -e "${COLOR1} │    ${WH} $ssh1           $vma               $vla              $trb              $ssa ${NC}"
 echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${COLOR1}┌─────────────────────────────────────────────────────┐"
-echo -e "  $COLOR1│$NC ${WH}[${COLOR1}01${WH}]$NC ${COLOR1}☞ ${WH}MENU SSH         ${WH}[${COLOR1}07${WH}]$NC ${COLOR1}☞ ${WH}BOT TELE$NC$COLOR1      │$NC"
-echo -e "  $COLOR1│$NC ${WH}[${COLOR1}02${WH}]$NC ${COLOR1}☞ ${WH}MENU XRAY         ${WH}[${COLOR1}08${WH}]$NC ${COLOR1}☞ ${WH}UPDATE SC$NC$COLOR1    │$NC"
-echo -e "  $COLOR1│$NC ${WH}[${COLOR1}03${WH}]$NC ${COLOR1}☞ ${WH}MENU TROJAN         ${WH}[${COLOR1}09${WH}]$NC ${COLOR1}☞ ${WH}CEK UDP$NC$COLOR1       │$NC"
-echo -e "  $COLOR1│$NC ${WH}[${COLOR1}05${WH}]$NC ${COLOR1}☞ ${WH}MENU THEME         ${WH}[${COLOR1}0X${WH}]$NC ${COLOR1}☞ ${WH}EXIT SC$NC$COLOR1        │$NC"     
+echo -e "   $COLOR1│$NC ${WH}[${COLOR1}01${WH}]$NC ${COLOR1}☞ ${WH}MENU SSH         ${WH}[${COLOR1}07${WH}]$NC ${COLOR1}☞ ${WH}BOT TELE$NC$COLOR1     │$NC"
+echo -e "   $COLOR1│$NC ${WH}[${COLOR1}02${WH}]$NC ${COLOR1}☞ ${WH}MENU XRAY        ${WH}[${COLOR1}08${WH}]$NC ${COLOR1}☞ ${WH}UPDATE SC$NC$COLOR1    │$NC"
+echo -e "   $COLOR1│$NC ${WH}[${COLOR1}03${WH}]$NC ${COLOR1}☞ ${WH}MENU TROJAN      ${WH}[${COLOR1}09${WH}]$NC ${COLOR1}☞ ${WH}CEK UDP$NC$COLOR1      │$NC"
+echo -e "   $COLOR1│$NC ${WH}[${COLOR1}05${WH}]$NC ${COLOR1}☞ ${WH}MENU THEME       ${WH}[${COLOR1}0X${WH}]$NC ${COLOR1}☞ ${WH}EXIT SC$NC$COLOR1      │$NC"     
 echo -e " ${COLOR1}└─────────────────────────────────────────────────────┘"
 echo -e "                   Version : 2024 ${NC}" | lolcat
 echo -e "                   _______________${NC}" | lolcat
