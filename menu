@@ -240,8 +240,8 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "${COLOR1} ╭════════════════╮╭══════════════════╮╭════════════════════╮${NC}"
-echo -e "${COLOR1} │ ${COLBG1} SSH :${WH}$status_ssh" "              ${COLBG1} NGINX :${WH}$status_nginx" "             ${COLBG1} XRAY :${WH}$status_xray           ${COLOR1}│$NC" 
-echo -e "${COLOR1} │ ${COLBG1} WS-ePRO :${WH}$status_ws_epro" "    ${COLBG1} DROPBEAR :${WH}$status_dropbear" "     ${COLBG1} HAPROXY :${WH}$status_haproxy   ${COLOR1}│$NC" 
+echo -e "${COLOR1} │ ${COLBG1} SSH :${WH}$status_ssh" "            ${COLBG1} NGINX :${WH}$status_nginx" "           ${COLBG1} XRAY :${WH}$status_xray         ${COLOR1}│${NC}" 
+echo -e "${COLOR1} │ ${COLBG1} WS-ePRO :${WH}$status_ws_epro" "    ${COLBG1} DROPBEAR :${WH}$status_dropbear" "     ${COLBG1} HAPROXY :${WH}$status_haproxy   ${COLOR1}│${NC}" 
 echo -e "${COLOR1} ╰════════════════╯╰══════════════════╯╰════════════════════╯${NC}"
 echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${COLOR1} │ ${COLBG1}Traffic      ${BIWhite}Today       Yesterday       Month   ${NC}"
