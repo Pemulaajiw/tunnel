@@ -268,8 +268,8 @@ echo -e "${COLOR1} └───────────────────�
 echo -e " ${COLOR1}┌─────────────────────────────────────────────────────┐"
 echo -e "   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}☞ ${WH}MENU SSHWS${NC}"   "${WH}  [${COLOR1}06${WH}]${NC} ${COLOR1}☞ ${WH}SETTINGS${NC}"
 echo -e "   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}☞ ${WH}MENU XRAYS${NC}"   "${WH}  [${COLOR1}07${WH}]${NC} ${COLOR1}☞ ${WH}BOT VVIP${NC}"
-echo -e "   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}☞ ${WH}MENU TROJAN${NC}" "${WH}  [${COLOR1}08${WH}]${NC} ${COLOR1}☞ ${WH}UPDATE SC${NC}"
-echo -e "   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}☞ ${WH}MENU SS-SOCK${NC}" "${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}☞ ${WH}CEK UDP${NC}"
+echo -e "   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}☞ ${WH}MENU TROJN${NC}"   "${WH}  [${COLOR1}08${WH}]${NC} ${COLOR1}☞ ${WH}UPDATE SC${NC}"
+echo -e "   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}☞ ${WH}MENU SDWSK${NC}"   "${WH}  [${COLOR1}09${WH}]${NC} ${COLOR1}☞ ${WH}CEK UDP${NC}"
 echo -e "   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}☞ ${WH}MENU THEME${NC}"   "${WH}  [${COLOR1}0X${WH}]${NC} ${COLOR1}☞ ${WH}KELUAR${NC}"
 echo -e " ${COLOR1}└─────────────────────────────────────────────────────┘"
 echo -e "                   Version : 2024 ${NC}" | lolcat
