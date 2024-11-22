@@ -16,6 +16,7 @@ colornow=$(cat /etc/rmbl/theme/color.conf)
 colorfont=$(cat /etc/rmbl/warnafont/warnaf.conf)
 export COLOR1="$(cat /etc/rmbl/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
 export COLBG1="$(cat /etc/rmbl/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+export WH="$(cat /etc/rmbl/warnafont/$colorfont | grep -w "WARNAF" | cut -d: -f2|sed 's/ //g')"
 #WH='\033[1;37m'
 y='\033[1;33m' #yellow
 BGX="\033[42m"
@@ -222,37 +223,37 @@ echo -e " ${COLOR1}           ┌───────────────�
 echo -e " ${COLOR1}           │          ${NC}${BIBlue}.::.${BIYellow}FANVPN${BIBlue}.::.$NC    " ${BIBlue}
 echo -e " ${COLOR1}           └───────────────────────────────┘$NC"
 echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1} │  ${COLBG1}System OS      :${WH}"`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` ${NC}
-echo -e "${COLOR1} │  ${COLBG1}Server Ram     :${WH}$uram MB/ $tram MB${NC}"
-echo -e "${COLOR1} │  ${COLBG1}System Core    :${WH}$CORE Core${NC}"
-echo -e "${COLOR1} │  ${COLBG1}ISP            :${WH}$ISP${NC}"
-echo -e "${COLOR1} │  ${COLBG1}CITY           :${WH}$CITY${NC}"
-echo -e "${COLOR1} │  ${COLBG1}Domain         :${WH}$domain${NC}"
-echo -e "${COLOR1} │  ${COLBG1}IP-VPS         :${WH}$IPVPS${NC}"
-echo -e "${COLOR1} │  ${COLBG1}Date & Time    :${WH}$DATEVPS | $TIMEZONE${NC}"
-echo -e "${COLOR1} │  ${COLBG1}System Uptime  :${WH}$SERONLINE${NC}"
-echo -e "${COLOR1} │  ${COLBG1}Your Ping      :${WH}$ping${NC}"
+echo -e "${COLOR1} │  ${COLOR1}System OS      :${WH}"`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` ${NC}
+echo -e "${COLOR1} │  ${COLOR1}Server Ram     :${WH}$uram MB/ $tram MB${NC}"
+echo -e "${COLOR1} │  ${COLOR1}System Core    :${WH}$CORE Core${NC}"
+echo -e "${COLOR1} │  ${COLOR1}ISP            :${WH}$ISP${NC}"
+echo -e "${COLOR1} │  ${COLOR1}CITY           :${WH}$CITY${NC}"
+echo -e "${COLOR1} │  ${COLOR1}Domain         :${WH}$domain${NC}"
+echo -e "${COLOR1} │  ${COLOR1}IP-VPS         :${WH}$IPVPS${NC}"
+echo -e "${COLOR1} │  ${COLOR1}Date & Time    :${WH}$DATEVPS | $TIMEZONE${NC}"
+echo -e "${COLOR1} │  ${COLOR1}System Uptime  :${WH}$SERONLINE${NC}"
+echo -e "${COLOR1} │  ${COLOR1}Your Ping      :${WH}$ping${NC}"
 echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
 DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e "       ${COLOR1} │  ${COLBG1}  Expiry In  :${green} LifeTime 😁 ${NC}"
+    echo -e "       ${COLOR1} │  ${WH}[${COLOR1}Expiry In${WH}]${NC} ${COLOR1}: ${WH} LifeTime 😁 ${NC}"
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "${COLOR1} ╭════════════════╮╭══════════════════╮╭════════════════════╮${NC}"
-echo -e "${COLOR1} │ ${COLBG1} SSH :${WH}$status_ssh" "            ${COLBG1} NGINX :${WH}$status_nginx" "           ${COLBG1} XRAY :${WH}$status_xray         ${COLOR1}│${NC}" 
-echo -e "${COLOR1} │ ${COLBG1} WS-ePRO :${WH}$status_ws_epro" "    ${COLBG1} DROPBEAR :${WH}$status_dropbear" "     ${COLBG1} HAPROXY :${WH}$status_haproxy   ${COLOR1}│${NC}" 
+echo -e "${COLOR1} │ ${COLOR1} SSH :${WH}$status_ssh" "            ${COLOR1} NGINX :${WH}$status_nginx" "           ${COLOR1} XRAY :${WH}$status_xray         ${COLOR1}│${NC}" 
+echo -e "${COLOR1} │ ${COLOR1} WS-ePRO :${WH}$status_ws_epro" "    ${COLOR1} DROPBEAR :${WH}$status_dropbear" "     ${COLOR1} HAPROXY :${WH}$status_haproxy   ${COLOR1}│${NC}" 
 echo -e "${COLOR1} ╰════════════════╯╰══════════════════╯╰════════════════════╯${NC}"
 echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1} │ ${COLBG1}Traffic      ${BIWhite}Today       Yesterday       Month   ${NC}"
-echo -e "${COLOR1} │ ${COLBG1}Download   ${BIWhite}$today_tx $today_txv      $yesterday_tx $yesterday_txv      $month_tx $month_txv   ${NC}"
-echo -e "${COLOR1} │ ${COLBG1}Upload     ${BIWhite}$today_rx $today_rxv      $yesterday_rx $yesterday_rxv      $month_rx $month_rxv   ${NC}"
-echo -e "${COLOR1} │ ${COLBG1}Total    ${BIWhite}  $todayd $today_v     $yesterday $yesterday_v      $month $month_v  ${NC} "
+echo -e "${COLOR1} │ ${COLOR1}Traffic      ${WH}Today       Yesterday       Month   ${NC}"
+echo -e "${COLOR1} │ ${COLOR1}Download   ${WH}$today_tx $today_txv      $yesterday_tx $yesterday_txv      $month_tx $month_txv   ${NC}"
+echo -e "${COLOR1} │ ${COLOR1}Upload     ${WH}$today_rx $today_rxv      $yesterday_rx $yesterday_rxv      $month_rx $month_rxv   ${NC}"
+echo -e "${COLOR1} │ ${COLOR1}Total    ${WH}  $todayd $today_v     $yesterday $yesterday_v      $month $month_v  ${NC} "
 echo -e " ${COLOR1}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "${COLOR1}        ┌─────────────────────────────────────┐" 
-echo -e "       ${COLOR1} │  ${COLBG1}  User  :${COLOR1}[${BIWhite}𝗙𝗔𝗡𝗡𝗧𝗨𝗡𝗘𝗟 💯${COLOR1}]${NC}" 
-echo -e "       ${COLOR1} │  ${COLBG1}  License  :${green} Registered ${NC}"
+echo -e "       ${COLOR1} │  ${WH}[${COLOR1}User${WH}]${NC} ${COLOR1}: ${WH} 𝗙𝗔𝗡𝗡𝗧𝗨𝗡𝗘𝗟 💯 ${NC}"
+echo -e "       ${COLOR1} │  ${WH}[${COLOR1}License${WH}]${NC} ${COLOR1}:${WH} Registered ${NC}" 
 if [ $exp \< 1000 ];
 then
 echo -e "       ${COLOR1} │  ${COLBG1}  Expiry In  :${green} LifeTime 😁 ${NC}"
@@ -261,14 +262,15 @@ else
 fi;
 echo -e "${COLOR1}        └─────────────────────────────────────┘"
 echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1} │   ${COLBG1}SSH         VMESS           VLESS          TROJAN          SS-SOCK ${NC}"
+echo -e "${COLOR1} │   ${COLOR1}SSH         VMESS           VLESS          TROJAN          SS-SOCK ${NC}"
 echo -e "${COLOR1} │    ${WH} $ssh1           $vma               $vla              $trb              $ssa ${NC}"
 echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${COLOR1}┌─────────────────────────────────────────────────────┐"
-echo -e "   $COLOR1│$NC ${WH}[${COLBG1}01${WH}]$NC ${COLBG1}☞ ${WH}MENU SSH         ${WH}[${COLOR1}07${WH}]$NC ${COLBG1}☞ ${WH}BOT TELE$NC$COLBG1     │$NC"
-echo -e "   $COLOR1│$NC ${WH}[${COLBG1}02${WH}]$NC ${COLBG1}☞ ${WH}MENU XRAY        ${WH}[${COLOR1}08${WH}]$NC ${COLBG1}☞ ${WH}UPDATE SC$NC$COLBG1    │$NC"
-echo -e "   $COLOR1│$NC ${WH}[${COLBG1}03${WH}]$NC ${COLBG1}☞ ${WH}MENU TROJAN      ${WH}[${COLOR1}09${WH}]$NC ${COLBG1}☞ ${WH}CEK UDP$NC$COLBG1      │$NC"
-echo -e "   $COLOR1│$NC ${WH}[${COLBG1}05${WH}]$NC ${COLBG1}☞ ${WH}MENU THEME       ${WH}[${COLOR1}0X${WH}]$NC ${COLBG1}☞ ${WH}EXIT SC$NC$COLBG1      │$NC"     
+echo -e "   ${WH}[${COLOR1}01${WH}]$NC ${COLOR1}☞ ${WH}MENU SSH${NC}"      "${WH}  [${COLOR1}06${WH}]${NC} ${COLOR1}☞ ${WH}SETTINGS${NC}"
+echo -e "   ${WH}[${COLOR1}02${WH}]$NC ${COLOR1}☞ ${WH}MENU XRAY${NC}"     "${WH}  [${COLOR1}07${WH}]${NC} ${COLOR1}☞ ${WH}BOT VVIP${NC}"
+echo -e "   ${WH}[${COLOR1}03${WH}]$NC ${COLOR1}☞ ${WH}MENU TROJAN${NC}"   "${WH}  [${COLOR1}08${WH}]${NC} ${COLOR1}☞ ${WH}UPDATE SC${NC}"
+echo -e "   ${WH}[${COLOR1}04${WH}]$NC ${COLOR1}☞ ${WH}MENU SS-SOCK${NC}"  "${WH}  [${COLOR1}09${WH}]${NC} ${COLOR1}☞ ${WH}CEK UDP${NC}"
+echo -e "   ${WH}[${COLOR1}05${WH}]$NC ${COLOR1}☞ ${WH}MENU THEME${NC}"    "${WH}  [${COLOR1}0X${WH}]${NC} ${COLOR1}☞ ${WH}KELUAR${NC}"
 echo -e " ${COLOR1}└─────────────────────────────────────────────────────┘"
 echo -e "                   Version : 2024 ${NC}" | lolcat
 echo -e "                   _______________${NC}" | lolcat
