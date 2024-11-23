@@ -284,32 +284,32 @@ UWhite='\033[4;37m'       # White
 BIYellow='\033[1;93m'     # Yellow
 
 clear
-echo -e "\e[0;106m              \e[1;97m☯ MERAUKE PROJECT TUNNELING ☯              \033[0m"
-echo -e "\e[33m OS            \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`
-echo -e "\e[33m IP            \e[0m:  $IPVPS"
-echo -e "\e[33m RAM           \e[0m:  $uram MB / $tram MB"
-echo -e "\e[33m ISP           \e[0m:  $ISP"
-echo -e "\e[33m CITY          \e[0m:  $CITY"
-echo -e "\e[33m DOMAIN        \e[0m:  $(cat /etc/xray/domain)"
-echo -e "\e[33m DATE & TIME   \e[0m:  $DATE2"
-echo -e "\e[33m UPTIME        \e[0m:  $uptime"
-echo -e "\e[33m Your Ping     \e[0m:  $ping \e[037;1m [ $url ]"
-echo -e "\e[0;106m                 \e[1;97m☯ STATUS SERVICE ☯                 \033[0m"
-echo -e "\e[33m SSH \e[0m    :$status_ssh"" \e[33m NGINX \e[0m    :$status_nginx"" \e[33m XRAY \e[0m   :$status_xray"" \e[33m HAPROXY \e[0m: $status_haproxy"
-echo -e "\e[33m NOOBZ \e[0m:$stat_noobz" \e[33m DROPBEAR \e[0m :$status_dropbear" \e[33m WS-ePro \e[0m :$status_ws_epro"
-echo -e "\e[33m SSH       VMESS         VLESS        TROJAN       SSWS      NOOBZVPN $NC"
-echo -e "\e[33m  $ssh1        $vma            $vla            $trb          $ssa         $jumlah_noobz $NC"
-echo -e "\e[0;106m                \e[1;97m☯ MENU AUTOSCRIPT ☯                 \033[0m"
-echo -e " [\e[36m 01 \e[0m] SSH Menu        [\e[36m 06 \e[0m] Bot Menu"
-echo -e " [\e[36m 02 \e[0m] XRAY Menu       [\e[36m 07 \e[0m] Backup Menu"
-echo -e " [\e[36m 03 \e[0m] NoobZ Menu      [\e[36m 08 \e[0m] System Menu"
-echo -e " [\e[36m 04 \e[0m] Warp+ Menu      [\e[36m 09 \e[0m] Reg IP Menu"
-echo -e " [\e[36m 05 \e[0m] Theme Menu      [\e[36m 10 \e[0m] Update Menu"
-echo -e " [\e[36m        MENU ENCRIPT SILAHKAN KETIK MENU 11${NC}" | lolcat
+echo -e "$COLBG1              $WH☯ MERAUKE PROJECT TUNNELING ☯              $COLBG1"
+echo -e "$COLOR1 OS            $WH:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`
+echo -e "$COLOR1 IP            $WH:  $IPVPS"
+echo -e "$COLOR1 RAM           $WH:  $uram MB / $tram MB"
+echo -e "$COLOR1 ISP           $WH:  $ISP"
+echo -e "$COLOR1 CITY          $WH:  $CITY"
+echo -e "$COLOR1 DOMAIN        $WH:  $(cat /etc/xray/domain)"
+echo -e "$COLOR1 DATE & TIME   $WH:  $DATE2"
+echo -e "$COLOR1 UPTIME        $WH:  $uptime"
+echo -e "$COLOR1 Your Ping     $WH:  $ping \e[037;1m [ $url ]"
+echo -e "$COLBG1                 $WH☯ STATUS SERVICE ☯                 $COLBG1"
+echo -e "$COLOR1 SSH     :$status_ssh""  NGINX     :$status_nginx""  XRAY    :$status_xray""  HAPROXY : $status_haproxy"
+echo -e "$COLOR1 NOOBZ :$stat_noobz"  DROPBEAR  :$status_dropbear"  WS-ePro  :$status_ws_epro"
+echo -e "$COLOR1 SSH       VMESS         VLESS        TROJAN        SSWS        NOOBZVPN $NC"
+echo -e "$COLOR1  $ssh1        $vma            $vla            $trb            $ssa            $jumlah_noobz $NC"
+echo -e "$COLBG1                 $WH☯ MENU AUTOSCRIPT ☯                 $COLBG1"
+echo -e " $COLOR1[$WH 01 $COLOR1] SSH Menu        [$WH 06 $COLOR1] Bot Menu"
+echo -e " $COLOR1[$WH 02 $COLOR1] XRAY Menu       [$WH 07 $COLOR1] Backup Menu"
+echo -e " $COLOR1[$WH 03 $COLOR1] NoobZ Menu      [$WH 08 $COLOR1] System Menu"
+echo -e " $COLOR1[$WH 04 $COLOR1] Warp+ Menu      [$WH 09 $COLOR1] Reg IP Menu"
+echo -e " $COLOR1[$WH 05 $COLOR1] Theme Menu      [$WH 10 $COLOR1] Update Menu"
+echo -e " $COLOR1[        MENU ENCRIPT SILAHKAN KETIK MENU 11" | lolcat
 echo -e " [\e[36m•x\e[0m] Exit Panel"
-echo -e "\e[0;106m              \e[1;97m☯ INFORMASI BANDWIDTH ☯               \033[0m"
-echo -e "${BICyan}$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
-echo -e "\e[0;106m                                                    \033[0m"
+echo -e "$COLBG1              $WH☯ INFORMASI BANDWIDTH ☯               $COLBG1"
+echo -e "${WH}$COLOR1 HARI ini: ${WH}$ttoday ${COLOR1}KEMARIN: ${WH}$tyest ${COLOR1}BULAN: ${WH}$tmon $NC"
+echo -e "$COLBG1                                                    $COLBG1"
 read -p " Select menu : " opt
 case $opt in
 01|1) clear ; menu-ssh ;;
