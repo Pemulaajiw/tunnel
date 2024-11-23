@@ -218,7 +218,7 @@ fi
 
 # STATUS SERVICE NOOBZ
 if [[ $stat_noobz == "running" ]]; then
-    stat_noobz="${COLOR1}ON${NC}"
+    stat_noobz="${GREEN}ON${NC}"
 else
     stat_noobz="${RED}OFF${NC}"
     systemctl start noobzvpns
