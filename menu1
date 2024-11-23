@@ -189,7 +189,7 @@ nginx_service=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d
 clear
 # STATUS SERVICE  SSH 
 if [[ $ssh_service == "running" ]]; then 
-   status_ssh="${WH}ON${NC}"
+   status_ssh="${GREEN}ON${NC}"
 else
    status_ssh="${RED}OFF${NC}"
 fi
@@ -197,28 +197,28 @@ fi
 # SSH Websocket Proxy
 ssh_ws=$( systemctl status ws | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $ssh_ws == "running" ]]; then
-    status_ws_epro="${WH}ON${NC}"
+    status_ws_epro="${GREEN}ON${NC}"
 else
     status_ws_epro="${RED}OFF${NC}"
 fi
 
 # STATUS SERVICE HAPROXY
 if [[ $haproxy_service == "running" ]]; then 
-   status_haproxy="${WH}ON${NC}"
+   status_haproxy="${GREEN}ON${NC}"
 else
    status_haproxy="${RED}OFF${NC}"
 fi
 
 # STATUS SERVICE XRAY
 if [[ $xray_service == "running" ]]; then 
-   status_xray="${WH}ON${NC}"
+   status_xray="${GREEN}ON${NC}"
 else
    status_xray="${RED}OFF${NC}"
 fi
 
 # STATUS SERVICE NOOBZ
 if [[ $stat_noobz == "running" ]]; then
-    stat_noobz="${WH}ON${NC}"
+    stat_noobz="${GREEN}ON${NC}"
 else
     stat_noobz="${RED}OFF${NC}"
     systemctl start noobzvpns
@@ -226,14 +226,14 @@ fi
 
 # STATUS SERVICE NGINX
 if [[ $nginx_service == "running" ]]; then 
-   status_nginx="${WH}ON${NC}"
+   status_nginx="${GREEN}ON${NC}"
 else
    status_nginx="${RED}OFF${NC}"
 fi
 
 # STATUS SERVICE Dropbear
 if [[ $dropbear_service == "running" ]]; then 
-   status_dropbear="${WH}ON${NC}"
+   status_dropbear="${GREEN}ON${NC}"
 else
    status_dropbear="${RED}OFF${NC}"
 fi
@@ -289,7 +289,8 @@ echo -e "${COLOR1} │${NC}${COLOR1} [•3]${NC}📨 ${WH} VLESS${NC}        " "
 echo -e "${COLOR1} │${NC}${COLOR1} [•4]${NC}📨 ${WH} TROJAN-WS${NC}    " "${COLOR1}[11]${NC}📨 ${WH} MENU ENCRIPSI${NC} "                 
 echo -e "${COLOR1} │${NC}${COLOR1} [•5]${NC}📨 ${WH} NOOBZVPNS${NC}    " "${COLOR1}[12]${NC}📨 ${WH} MENU WARP${NC} "
 echo -e "${COLOR1} │${NC}${COLOR1} [•6]${NC}📨 ${WH} SHADOWSK${NC}     " "${COLOR1}[13]${NC}📨 ${WH} MENU BOT TELE${NC} "
-echo -e "${COLOR1} │${NC}${COLOR1} [•7]${NC}📨 ${WH} Update Menu${NC}  " "${COLOR1}[14]${NC}📨 ${WH} MENU BACKUP${NC} "   
+echo -e "${COLOR1} │${NC}${COLOR1} [•7]${NC}📨 ${WH} Update Menu${NC}  " "${COLOR1}[14]${NC}📨 ${WH} MENU BACKUP${NC} "
+echo -e "${COLOR1} │${NC}${COLOR1} [15]${NC}📨 ${WH} REGIST IP"
 echo -e "${COLOR1} └──────────────────────────────────────────────────────┘${NC}" 
 echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${COLOR1} │  \033[0m ${BOLD}${GREEN}XXX${BIYellow} SSH${GREEN}  XXX  ${BIYellow}VMESS  ${GREEN}XXX  ${BIYellow}VLESS  ${GREEN}XXX  ${BIYellow}TROJAN${GREEN} XXX $NC "
@@ -298,7 +299,7 @@ echo -e "${COLOR1} │  \033[0m ${BOLD}${GREEN}XXX${BIYellow} SDWSK${GREEN}  XXX
 echo -e "${COLOR1} │  \033[0m ${Blue}     $ssa         $jumlah_noobz              $NC"
 echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
 echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1} │$NC ${COLOR1}HARI ini${NC}: ${WH}$today_tx $today_txv$NC ${COLOR1}KEMARIN${NC}: ${WH}$yesterday_tx $yesterday_txv$NC ${COLOR1}BULAN${NC}: ${WH}$month_tx $month_txv$NC $NC"
+echo -e "${COLOR1} │HARI ini${NC}: ${WH}$today_tx $today_txv$NC ${COLOR1}KEMARIN${NC}: ${WH}$yesterday_tx $yesterday_txv$NC ${COLOR1}BULAN${NC}: ${WH}$month_tx $month_txv$NC $NC"
 echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${COLOR1}┌─────────────────────────────────────┐${NC}"
 echo -e " ${COLOR1}│  Version      ${NC} : Ver2.4 Last Update"
