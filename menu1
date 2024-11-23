@@ -189,7 +189,7 @@ nginx_service=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d
 clear
 # STATUS SERVICE  SSH 
 if [[ $ssh_service == "running" ]]; then 
-   status_ssh="${GREEN}ON${NC}"
+   status_ssh="${WH}ON${NC}"
 else
    status_ssh="${RED}OFF${NC}"
 fi
@@ -197,28 +197,28 @@ fi
 # SSH Websocket Proxy
 ssh_ws=$( systemctl status ws | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $ssh_ws == "running" ]]; then
-    status_ws_epro="${GREEN}ON${NC}"
+    status_ws_epro="${WH}ON${NC}"
 else
     status_ws_epro="${RED}OFF${NC}"
 fi
 
 # STATUS SERVICE HAPROXY
 if [[ $haproxy_service == "running" ]]; then 
-   status_haproxy="${GREEN}ON${NC}"
+   status_haproxy="${WH}ON${NC}"
 else
    status_haproxy="${RED}OFF${NC}"
 fi
 
 # STATUS SERVICE XRAY
 if [[ $xray_service == "running" ]]; then 
-   status_xray="${GREEN}ON${NC}"
+   status_xray="${WH}ON${NC}"
 else
    status_xray="${RED}OFF${NC}"
 fi
 
 # STATUS SERVICE NOOBZ
 if [[ $stat_noobz == "running" ]]; then
-    stat_noobz="${COLOR1}ON${NC}"
+    stat_noobz="${WH}ON${NC}"
 else
     stat_noobz="${RED}OFF${NC}"
     systemctl start noobzvpns
@@ -226,14 +226,14 @@ fi
 
 # STATUS SERVICE NGINX
 if [[ $nginx_service == "running" ]]; then 
-   status_nginx="${GREEN}ON${NC}"
+   status_nginx="${WH}ON${NC}"
 else
    status_nginx="${RED}OFF${NC}"
 fi
 
 # STATUS SERVICE Dropbear
 if [[ $dropbear_service == "running" ]]; then 
-   status_dropbear="${GREEN}ON${NC}"
+   status_dropbear="${WH}ON${NC}"
 else
    status_dropbear="${RED}OFF${NC}"
 fi
@@ -262,110 +262,53 @@ BIYellow='\033[1;93m'     # Yellow
 clear
 echo -e ""
 echo -e ""
-echo -e "                 ${BICyan}Premium Script : ${BIPurple}SILLA-VPN${NC}"
-echo -e "              ${BICyan} SCRIPT MULTI V3.6 STABILE ${NC}"
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │                  ${BIWhite}${UWhite}Informations${NC}"
-echo -e "${BICyan} │====================================================="
-echo -e " ${BICyan}│  ${BICyan}Use Core        :  ${BIPurple}XRAY${NC}"
-echo -e " ${BICyan}│  ${BICyan}Current Domain  :  ${BIPurple}$(cat /etc/xray/domain)${NC}"
-echo -e " ${BICyan}│  ${BICyan}IP-VPS          :  ${BIYellow}$IPVPS${NC}"
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
-echo -e "   ${BICyan}     STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │                      OTHER MENU                     │ ${NC}" 
-echo -e "${BICyan} │=====================================================│"
-echo -e "${BICyan} │${NC}${BICyan} [•1]${NC}📨 ${white} SSH${NC}          " "${BICyan}[•7]${NC}📨 ${white} CHECK RUNNING${NC}"
-echo -e "${BICyan} │${NC}${BICyan} [•2]${NC}📨 ${white} VMESS${NC}        " "${BICyan}[•8]${NC}📨 ${white} RESTR SERVICE${NC}"           
-echo -e "${BICyan} │${NC}${BICyan} [•3]${NC}📨 ${white} VLESS${NC}        " "${BICyan}[•9]${NC}📨 ${white} BACKUP MENU${NC}  "                   
-echo -e "${BICyan} │${NC}${BICyan} [•4]${NC}📨 ${white} TROJAN-GO${NC}    " "${BICyan}[10]${NC}📨 ${white} INSTALL BOT VPS${NC} "                 
-echo -e "${BICyan} │${NC}${BICyan} [•5]${NC}📨 ${white} TROJAN-WS${NC}    " "${BICyan}[11]${NC}📨 ${white} MENU SETINGS${NC} " 
-echo -e "${BICyan} │${NC}${BICyan} [•6]${NC}📨 ${white} Update Menu${NC}  " "${BICyan}[12]${NC}📨 ${white} SETTING BOT${NC} "   
-echo -e "${BICyan} └──────────────────────────────────────────────────────┘${NC}" 
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │  \033[0m ${BOLD}${GREEN}XXX${BIYellow} SSH${GREEN}  XXX  ${BIYellow}VMESS  ${GREEN}XXX  ${BIYellow}VLESS  ${GREEN}XXX  ${BIYellow}TROJAN${GREEN} XXX $NC "
-echo -e "${BICyan} │  \033[0m ${Blue}     $ssh1         $vma           $vla           $tra              $NC"
-echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
-echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
-echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
-echo -e " ${BICyan}│  Version      ${NC} : Ver3. Last Update"
-echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m $Name \e[0m"
-echo -e " ${BICyan}│  Expiry script${NC} : ${BIYellow}$useexp${NC} Days"
-echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
+echo -e "                 ${COLOR1}Premium Script : ${WH}.::::. FAN-VPN .::::.${NC}"
+echo -e "              ${COLOR1} SCRIPT MULTI V2.4 STABILE ${NC}"
+echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${COLOR1} │                  ${WH}${COLOR1}Informations${NC}"
+echo -e "${COLOR1} │====================================================="
+echo -e "${COLOR1} │  ${COLOR1}SYSTEM VPS  : ${WH}$MODEL${NC}"
+echo -e "${COLOR1} │  ${COLOR1}ISP VPS     : ${WH}$ISP${NC}"
+echo -e "${COLOR1} │  ${COLOR1}CITY        : ${WH}$CITY${NC}"
+echo -e "${COLOR1} │  ${COLOR1}RAM SERVER  : ${WH}$uram / $tram MB ${NC}"
+echo -e "${COLOR1} │  ${COLOR1}DATE VPS    : ${WH}$DATEVPS${NC}"
+echo -e "${COLOR1} │  ${COLOR1}IP SERVER   : ${WH}$IPVPS${NC}"
+echo -e "${COLOR1} │  ${COLOR1}DOMAIN VPS  : ${WH}$domain${NC}"
+echo -e "${COLOR1} │  ${COLOR1}TIMEZONE    : ${WH}$TIMEZONE${NC}"
+echo -e "${COLOR1} │  ${COLOR1}UPTIME VPS  : ${WH}$SERONLINE${NC}"
+echo -e " ${COLOR1}└─────────────────────────────────────────────────────┘${NC}"
+echo -e " ${COLOR1}         SSH ${NC}: ${status_ssh}   ${COLOR1}NGINX ${NC}: ${status_nginx}   ${COLOR1}HAPROXY ${NC}: ${status_haproxy}"
+echo -e " ${COLOR1}       WS-ePro ${NC}: ${status_ws_epro}   ${COLOR1}XRAY ${NC}: ${status_xray}   ${COLOR1}DROPBEAR ${NC}: ${status_dropbear}"
+echo -e " ${COLOR1}                                   NOONZVPNS ${NC}: ${stat_noobz}"
+echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${COLOR1} │                      OTHER MENU                     │ ${NC}" 
+echo -e "${COLOR1} │=====================================================│"
+echo -e "${COLOR1} │${NC}${COLOR1} [•1]${NC}📨 ${WH} SSH${NC}          " "${COLOR1}[•8]${NC}📨 ${WH} MENU SETINGS${NC}"
+echo -e "${COLOR1} │${NC}${COLOR1} [•2]${NC}📨 ${WH} VMESS${NC}        " "${COLOR1}[•9]${NC}📨 ${WH} MENU WARNA${NC}"           
+echo -e "${COLOR1} │${NC}${COLOR1} [•3]${NC}📨 ${WH} VLESS${NC}        " "${COLOR1}[10]${NC}📨 ${WH} MENU TEMA${NC}  "                   
+echo -e "${COLOR1} │${NC}${COLOR1} [•4]${NC}📨 ${WH} TROJAN-WS${NC}    " "${COLOR1}[11]${NC}📨 ${WH} MENU ENCRIPSI${NC} "                 
+echo -e "${COLOR1} │${NC}${COLOR1} [•5]${NC}📨 ${WH} NOOBZVPNS${NC}    " "${COLOR1}[12]${NC}📨 ${WH} MENU WARP${NC} "
+echo -e "${COLOR1} │${NC}${COLOR1} [•6]${NC}📨 ${WH} SHADOWSK${NC}     " "${COLOR1}[13]${NC}📨 ${WH} MENU BOT TELE${NC} "
+echo -e "${COLOR1} │${NC}${COLOR1} [•7]${NC}📨 ${WH} Update Menu${NC}  " "${COLOR1}[14]${NC}📨 ${WH} MENU BACKUP${NC} "   
+echo -e "${COLOR1} └──────────────────────────────────────────────────────┘${NC}" 
+echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${COLOR1} │  \033[0m ${BOLD}${GREEN}XXX${BIYellow} SSH${GREEN}  XXX  ${BIYellow}VMESS  ${GREEN}XXX  ${BIYellow}VLESS  ${GREEN}XXX  ${BIYellow}TROJAN${GREEN} XXX $NC "
+echo -e "${COLOR1} │  \033[0m ${Blue}     $ssh1         $vma           $vla           $tra              $NC"
+echo -e "${COLOR1} │  \033[0m ${BOLD}${GREEN}XXX${BIYellow} SDWSK${GREEN}  XXX  ${BIYellow}NOOBZ  ${GREEN}XXX $NC "
+echo -e "${COLOR1} │  \033[0m ${Blue}     $ssa         $jumlah_noobz              $NC"
+echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
+echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${COLOR1} │$NC ${COLOR1}HARI ini${NC}: ${WH}$today_tx $today_txv$NC ${COLOR1}KEMARIN${NC}: ${WH}$yesterday_tx $yesterday_txv$NC ${COLOR1}BULAN${NC}: ${WH}$month_tx $month_txv$NC $NC"
+echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
+echo -e " ${COLOR1}┌─────────────────────────────────────┐${NC}"
+echo -e " ${COLOR1}│  Version      ${NC} : Ver2.4 Last Update"
+echo -e "${COLOR1} │  Status       ${NC} : $sts"
+echo -e " ${COLOR1}│  User       ${NC}   :\033[1;36m $username \e[0m"
+echo -e " ${COLOR1}│  Expiry script${NC} : ${RED}$Exp1 ${COLOR1}[${BIWhite}$espayed Days${NC} Days"
+echo -e " ${COLOR1}└─────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
 echo -e ""
-case $opt in
-1) clear ; menu-sshh ;;
-2) clear ; menu-vmess ;;
-3) clear ; menu-vless ;;
-4) clear ; menu-trgo ;;
-5) clear ; menu-trojan ;;
-6) clear ; rm -rf /root/updatefile.sh && wget https://raw.githubusercontent.com/SETANTAZVPN/v4/main/updatefile.sh && chmod +x updatefile.sh && ./updatefile.sh ;;
-7) clear ; status ;;
-8) clear ; restarts ;;
-9) clear ; menu-backup ;;
-10) clear ; wget https://raw.githubusercontent.com/SETANTAZVPN/v4/main/install-bot.sh && chmod +x install-bot.sh && ./install-bot.sh ;;
-11) clear ; menu-set ;;
-12) clear ; bot ;;
-00) clear ; menu ;;
-x) exit ;;
-*) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
-esac
-echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e " $COLOR1  │${NC} ${COLBG1}              ${WH} • FANVPN TUNNELING •                 ${NC} $COLOR1│ $NC" 
-echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
-echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1} │  ${COLBG1}SYSTEM VPS  : ${WH}$MODEL${NC}"
-echo -e "${COLOR1} │  ${COLBG1}ISP VPS     : ${WH}$ISP${NC}"
-echo -e "${COLOR1} │  ${COLBG1}CITY        : ${WH}$CITY${NC}"
-echo -e "${COLOR1} │  ${COLBG1}RAM SERVER  : ${WH}$uram / $tram MB ${NC}"
-echo -e "${COLOR1} │  ${COLBG1}DATE VPS    : ${WH}$DATEVPS${NC}"
-echo -e "${COLOR1} │  ${COLBG1}IP SERVER   : ${WH}$IPVPS${NC}"
-echo -e "${COLOR1} │  ${COLBG1}DOMAIN VPS  : ${WH}$domain${NC}"
-echo -e "${COLOR1} │  ${COLBG1}TIMEZONE    : ${WH}$TIMEZONE${NC}"
-echo -e "${COLOR1} │  ${COLBG1}UPTIME VPS  : ${WH}$SERONLINE${NC}"
-echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
-echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "                     << STATUS SERVICE >>                    \E[0m" | lolcat    
-echo -e " ${YELL}         SSH ${NC}: ${status_ssh}   ${YELL}NGINX ${NC}: ${status_nginx}   ${YELL}HAPROXY ${NC}: ${status_haproxy}"
-echo -e " ${YELL}       WS-ePro ${NC}: ${status_ws_epro}   ${YELL}XRAY ${NC}: ${status_xray}   ${YELL}DROPBEAR ${NC}: ${status_dropbear}"
-echo -e " ${YELL}                                   NOONZVPNS ${NC}: ${stat_noobz}"
-echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1} │  \033[0m ${BOLD}${YELLOW}SSH    VMESS       VLESS      TROJAN      SHADOWSOCKS$NC  ${CYAN}│"
-echo -e "${COLOR1} │  \033[0m ${LIGHT} $ssh1       $vma           $vla          $trb               $ssa   $NC   ${CYAN} │"
-echo -e "${COLOR1} │  \033[0m ${BOLD}${YELLOW}NOOBZVPNS        $white:$NC $jumlah_noobz  ${BIWhite}$a"
-echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
-echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "                     << MENU TUNNELING >>                    \E[0m" | lolcat    
-echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}
-echo -e "   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSH      ${WH}[${COLOR1}Menu${WH}]  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}SYSTEM${NC}           ${WH}[${COLOR1}Menu${WH}]${NC}"
-echo -e "   ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}VMESS    ${WH}[${COLOR1}Menu${WH}]  ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}COLOR${NC}            ${WH}[${COLOR1}Menu${WH}]${NC}"
-echo -e "   ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS    ${WH}[${COLOR1}Menu${WH}]  ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}GANTI TEMA${NC}       ${WH}[${COLOR1}Menu${WH}]${NC}"
-echo -e "   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN   ${WH}[${COLOR1}Menu${WH}]  ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}ENCRIPT FILE${NC}     ${WH}[${COLOR1}Menu${WH}]${NC}"
-echo -e "   ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}SDSK     ${WH}[${COLOR1}Menu${WH}]  ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}INSTALL WARP${NC}     ${WH}[${COLOR1}Menu${WH}]${NC}"
-echo -e "   ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}NOOBZVPN ${WH}[${COLOR1}Menu${WH}]  ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}BOT VIP${NC}          ${WH}[${COLOR1}Menu${WH}]${NC}"
-echo -e "   ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}UPDATE   ${WH}[${COLOR1}Menu${WH}]  ${WH}[${COLOR1}14${WH}]${NC} ${COLOR1}• ${WH}BACKUP & RESTORE${NC} ${WH}[${COLOR1}Menu${WH}]${NC}"
-echo -e "${COLOR1}     ╭──────────── • ${WH}PANEL ADMIN VIP${NC}${COLOR1} • ───────────╮${NC}"
-echo -e "${COLOR1}     │  ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}RESELLER IP ${WH}[${COLOR1}MENU${WH}] $COLOR1                │$NC"
-echo -e "${COLOR1}     └────────────────────────────────────────────┘${NC}"
-echo -e " ${COLOR1}        ${KIRI} JANGAN LUPA SHOLAT KAWAN  ${KANAN}"
-echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1} │$NC  ${WH}Total    $COLOR1│${NC}     ${WH}Today       ${WH}Yesterday       ${WH}Month         ${NC}"
-echo -e "${COLOR1} │$NC ${WH}Bantwidth $COLOR1│${NC}   ${WH}$today_tx $today_txv     ${WH}$yesterday_tx $yesterday_txv      ${WH}$month_tx $month_txv$COLOR1${NC}"
-echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
-DATE=$(date +'%Y-%m-%d')
-echo -e "${COLOR1} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1} │  ${COLOR1}Script Version :${GREEN} 2.4 ${COLOR1}[${BIWhite}Last Update${COLOR1}]${NC}"
-echo -e "${COLOR1} │  ${COLOR1}Script Status  :${NC} $sts"
-echo -e "${COLOR1} │  ${COLOR1}Username       :${GREEN} $username${NC}"
-echo -e "${COLOR1} │  ${COLOR1}Expired script :${RED} $Exp1 ${COLOR1}[${BIWhite}$espayed Days${COLOR1}]${NC}"
-echo -e "${COLOR1} └─────────────────────────────────────────────────────┘${NC}"
-echo -e " "
-echo -ne " Select Menu : "; read opt
 case $opt in
 1 | 01)
 clear
