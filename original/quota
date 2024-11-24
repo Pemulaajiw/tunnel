@@ -31,8 +31,8 @@ function con() {
 
 function cekvmess(){
   data=($(cat /etc/xray/config.json | grep '^###' | cut -d ' ' -f 2 | sort | uniq))
-  if [[ ! -e /etc/limit/vmess ]]; then
-  mkdir -p /etc/limit/vmess
+  if [[ ! -e /etc/original/vmess ]]; then
+  mkdir -p /etc/original/vmess
   fi
   for user in ${data[@]}
   do
@@ -87,8 +87,8 @@ function cekvless(){
 }
 function cektrojan(){
   data=($(cat /etc/xray/config.json | grep '^#!' | cut -d ' ' -f 2 | sort | uniq))
-  if [[ ! -e /etc/limit/trojan ]]; then
-  mkdir -p /etc/limit/trojan
+  if [[ ! -e /etc/original/trojan ]]; then
+  mkdir -p /etc/original/trojan
   fi
   for user in ${data[@]}
   do
