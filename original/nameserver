@@ -7,9 +7,14 @@ FONT="\033[0m"
 GREENBG="\033[42;37m"
 REDBG="\033[41;37m"
 NC='\e[0m'
+DOMAIN=devstun.my.id
+sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+dns=${sub}.devstun.my.id
+CF_ID=cocresult1@gmail.com
+CF_KEY=8b69a018ff18da71e5d8297e720e14cb38286
 REPOS="https://raw.githubusercontent.com/Pemulaajiw/tunnel/main/"
 ns_domain_cloudflare() {
-	DOMAIN="ultrvvip.web.id"
+	DOMAIN="devstun.my.id"
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 	echo -e "           Masukan Subdomain              "
@@ -19,7 +24,7 @@ ns_domain_cloudflare() {
 	if [ -z $SUB ]; then
     exit
     else
-	SUB_DOMAIN=${SUB}."ultrvvip.web.id"
+	SUB_DOMAIN=${SUB}."devstun.my.id"
 	NS_DOMAIN=ns.${SUB_DOMAIN}
 	CF_ID=mbahkoid13@gmail.com
         CF_KEY=0a69351df41c7caca71a2b0d8290d4b3
