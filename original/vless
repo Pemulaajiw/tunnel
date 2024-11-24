@@ -34,8 +34,8 @@ function con() {
   while true; do
   sleep 5
   data=($(cat /etc/xray/config.json | grep '^#&' | cut -d ' ' -f 2 | sort | uniq))
-  if [[ ! -e /etc/original/vless ]]; then
-  mkdir -p /etc/original/vless
+  if [[ ! -e /etc/limit/vless ]]; then
+  mkdir -p /etc/limit/vless
   fi
   for user in ${data[@]}
   do
@@ -43,18 +43,18 @@ function con() {
   getThis=$(cat /tmp/${user} | awk '{print $1}');
   if [[ ${getThis} != "failed" ]]; then
         downlink=$(xray api stats --server=127.0.0.1:10000 -name "user>>>${user}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2);
-        if [ -e /etc/original/vless/${user} ]; then
-        plus2=$(cat /etc/original/vless/${user});
+        if [ -e /etc/limit/vless/${user} ]; then
+        plus2=$(cat /etc/limit/vless/${user});
         if [[ ${#plus2} -gt 0 ]]; then
         plus3=$(( ${downlink} + ${plus2} ));
-        echo "${plus3}" > /etc/original/vless/"${user}"
+        echo "${plus3}" > /etc/limit/vless/"${user}"
         xray api stats --server=127.0.0.1:10000 -name "user>>>${user}>>>traffic>>>downlink" -reset > /dev/null 2>&1
         else
-        echo "${downlink}" > /etc/original/vless/"${user}"
+        echo "${downlink}" > /etc/limit/vless/"${user}"
         xray api stats --server=127.0.0.1:10000 -name "user>>>${user}>>>traffic>>>downlink" -reset > /dev/null 2>&1
         fi
         else
-        echo "${downlink}" > /etc/original/vless/"${user}"
+        echo "${downlink}" > /etc/limit/vless/"${user}"
         xray api stats --server=127.0.0.1:10000 -name "user>>>${user}>>>traffic>>>downlink" -reset > /dev/null 2>&1
         fi
         else
@@ -67,8 +67,8 @@ for user in ${data[@]}
     if [ -e /etc/vless/${user} ]; then
       checkLimit=$(cat /etc/vless/${user});
       if [[ ${#checkLimit} -gt 1 ]]; then
-      if [ -e /etc/original/vless/${user} ]; then
-      Usage=$(cat /etc/original/vless/${user});
+      if [ -e /etc/limit/vless/${user} ]; then
+      Usage=$(cat /etc/limit/vless/${user});
       if [[ ${Usage} -gt ${checkLimit} ]]; then
       total=$(con ${Usage})
       total2=$(con ${checkLimit})
@@ -76,10 +76,10 @@ for user in ${data[@]}
       sed -i "/^#& $user $exp/,/^},{/d" /etc/xray/config.json
       sed -i "/^#& $user $exp/d" /etc/vless/.vless.db
       send-log
-      rm -f /etc/funny/original/vless/ip/$user
+      rm -f /etc/funny/limit/vless/ip/$user
 	  rm -f /etc/vless/$user
-	  rm -f /etc/original/vless/$user
-	  rm -f /etc/original/vless/quota/$user
+	  rm -f /etc/limit/vless/$user
+	  rm -f /etc/limit/vless/quota/$user
 	  rm -f /var/www/html/vless-$user.txt
       systemctl restart xray >> /dev/null 2>&1
       else
