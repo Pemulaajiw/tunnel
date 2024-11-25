@@ -1,14 +1,21 @@
 #!/bin/bash
-MYIP=$(wget -qO- icanhazip.com);
+MYIP=$(wget -qO- icanhazip.com)
 apt install jq curl -y
-#read -p "Masukan Domain (contoh : Dragon)" domen
-DOMAIN=devstun.my.id
-SUB=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-SUB_DOMAIN=${SUB}.devstun.my.id
-CF_ID=cocresult1@gmail.com
-CF_KEY=8b69a018ff18da71e5d8297e720e14cb38286
+
+# Domain utama yang ditetapkan
+DOMAIN=klmpk.my.id
+
+# Membuat subdomain secara acak dengan domain utama
+sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+dns=${sub}.$DOMAIN
+
+# Kredensial Cloudflare
+CF_ID=andyyuda41@gmail.com
+CF_KEY=9d25535086484fb695ab64a70a70532a32fd4
+
 set -euo pipefail
-IP=$(wget -qO- icanhazip.com);
+IP=$(wget -qO- icanhazip.com)
+
 echo "Updating DNS for ${dns}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
@@ -33,10 +40,11 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      -H "X-Auth-Key: ${CF_KEY}" \
      -H "Content-Type: application/json" \
      --data '{"type":"A","name":"'${dns}'","content":"'${IP}'","ttl":120,"proxied":false}')
+
 echo "$dns" > /root/domain
 echo "$dns" > /root/scdomain
 echo "$dns" > /etc/xray/domain
 echo "$dns" > /etc/v2ray/domain
 echo "$dns" > /etc/xray/scdomain
-echo "IP=$dns" > /var/lib/kyt/ipvps.conf
+echo "IP=$dns" > /var/lib/klmpk/ipvps.conf
 cd
