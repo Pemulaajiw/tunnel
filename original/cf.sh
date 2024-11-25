@@ -3,8 +3,8 @@ MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 #read -p "Masukan Domain (contoh : Dragon)" domen
 DOMAIN=devstun.my.id
-sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.devstun.my.id
+SUB=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+SUB_DOMAIN=${SUB}.devstun.my.id
 CF_ID=cocresult1@gmail.com
 CF_KEY=8b69a018ff18da71e5d8297e720e14cb38286
 set -euo pipefail
