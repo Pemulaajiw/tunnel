@@ -1,26 +1,12 @@
 #!/bin/bash
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
-clear
-echo -e ""
-echo -e "\033[96;1m============================\033[0m"
-echo -e "\033[93;1m      INPUT SUBDOMAIN"
-echo -e "\033[96;1m============================\033[0m"
-echo -e "\033[91;1m Note. contoh Subdomain :\033[0m \033[93mbodoh22 \033[0m"
-echo -e " "
-read -p "SUBDOMAIN :  " domen
-echo -e ""
-#DOMAIN=ranstore.cloud
-DOMAIN=ranstore.cloud
-sub=${domen}
-dns=${sub}.ranstore.cloud
-#(</dev/urandom tr -dc a-z0-9 | head -c5)
-#dns=${sub}.mypremium.biz.id
-#CF_ID=andyyuda41@gmail.com
-#CF_KEY=0d626234700bad388d6d07b49c42901445d1c
-dns=${sub}.ranstore.cloud
-CF_KEY=3b4e4274c71496bbbdf858f4c6800aa0380e0
-CF_ID=Rantempest2@gmail.com
+#read -p "Masukan Domain (contoh : Dragon)" domen
+DOMAIN=freetunnel.net
+sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+dns=${sub}.freetunnel.net
+CF_ID=pribadi.no99@gmail.com
+CF_KEY=10afee244f409c97d15692d22ff9029dc666b
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
